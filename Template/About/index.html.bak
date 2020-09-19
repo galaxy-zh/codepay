@@ -1,0 +1,24 @@
+
+<include file="Mobile:header" nav="关于我们"/><body>
+<div class="mobile">
+    <div class="othertop">更多</div>
+   	<h1 class="about_tit">关于我们</h1>
+   	<ul class="about_outer">
+   		<li>
+            <volist name=":getData('article_type','all','','','sort')" id="t">
+                <a href="{:U('lists','id='.$t['id'])}"><img src="__PUBLIC__/mobile/img/about_notice.png">{$t.name}</a><!--{$t.ico}-->
+            </volist>
+   		</li>
+   	</ul>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/xin_mobile/staticfaxian/css/foot.css" />
+   <footer class='footer'>
+<a href="/Mobile/index/index.html"><img src="__PUBLIC__/xin_mobile/staticfaxian/picture/rbtn_home_hot_normal.png"></a>
+<a href="/Mobile/lists.html"><img src="__PUBLIC__/xin_mobile/staticfaxian/picture/rbtn_home_product_normal.png">
+</a><a href="/Mobile/yuebao.html"><img src="__PUBLIC__/xin_mobile/staticfaxian/picture/icon_sanbiao_home.png"></a>
+<a href="#"><img src="__PUBLIC__/xin_mobile/staticfaxian/picture/rbtn_home_find_checked.png"></a>
+<a href="/user/person.html"><img src="__PUBLIC__/xin_mobile/staticfaxian/picture/rbtn_home_my_normal.png"></a>
+
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<include file="Mobile:header" nav="充值"/>
+<div class="mobile">
+    <div class="othertop">
+        <a class="goback" href="{:U('person')}"><img src="__PUBLIC__/mobile/img/goback.png" /></a>
+        <div class="othertop-font">充值</div>
+    </div>
+    <div class="header-nbsp"></div>
+    <!-- 充值 -->
+    <form action="{:U('recharge')}" method="post" id="ifr">
+        <div class="blank_card">
+            <p>充值金额</p>
+            <label class="big">￥</label>
+            <input class="big" type="text" name="money" placeholder="请输入充值金额" id="money" />
+            <p>可用余额&nbsp;&nbsp;&nbsp;￥ <strong>{$user.money}</strong> 元</p>
+        </div>
+        <div class="blank_card">
+            <label>充值方式</label>
+             <!--<if condition="getInfo('qr_alipay_status') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'alipay' value="alipay" name="type"> 支付宝</label></if>
+            <if condition="getInfo('qr_wechat_status') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'wechat' value="wechat" name="type"> 微信</label></if>
+            <if condition="getInfo('pay_bank_status') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'bank' value="bank" name="type"> 银行入款</label></if>
+            <if condition="getInfo('online_wechat') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'online_wechat' value="online_wechat" name="type"> 微信充值</label></if>
+            <if condition="getInfo('online_wechat') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio"  id = 'online_alipay' value="online_alipay" name="type"> 支付宝充值</label></if>
+           <label><input type="radio" value="3" name="style" id="selected"> 银行卡</label>-->
+        </div>
+		<style>
+		.g-pay-ment {
+    overflow: hidden;
+}
+
+.m-round {
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 1px 1px 1px #e7e7e7;
+}.pay div, .pay ul, .pay li, .pay dl, .pay dt, .pay dd, .pay table, .pay td, .pay input {
+    font-size: 12px;
+}
+
+.pay ul, li {
+    list-style: none;
+}
+
+.g-pay-ment li {
+    height: 0.4rem;
+    line-height: 35px;
+    border-top: 1px dotted #CBCBCB;
+    max-height: 70px;
+    padding: 5px 0px 20px 0px;
+    overflow: hidden;
+    margin-top: -1px;
+    float: left;
+}
+#ulBankList li a.z-initsel {
+    border: 1px solid #F60;
+    color: #666;
+}
+
+.g-pay-ment li a {
+    width: 100%;
+    max-width: 150px;
+}
+a:link {
+    text-decoration: none;
+}
+.g-Recharge li a, .z-initsel, .g-Recharge li b {
+    color: #959595;
+    width: 90%;
+    line-height: 30px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 3px;
+    text-align: center;
+    border: 1px solid #EAEAEA;
+    box-shadow: 1px 1px 1px #EDEDED;
+    position: relative;
+}.g-pay-ment li img {
+    width: 100%;
+    max-width: 150px;
+    vertical-align: middle;
+    border: 1px solid #EAEAEA;
+}
+
+.pay img {
+    border: 0;
+}.z-initsel s {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    display: inline-block;
+    background-position: 0 0;
+}
+.pay .z-sel s, .z-initsel s, .z-Btn-ok b {
+    background: url(/codepay/img/member-icon.png);
+    background-size: 40px auto;
+}
+		</style>
+		   <!-- <if condition="getInfo('qr_alipay_status') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'alipay' value="alipay" name="type"> 支付宝</label></if>
+            <if condition="getInfo('qr_wechat_status') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'wechat' value="wechat" name="type"> 微信</label></if>
+            <if condition="getInfo('pay_bank_status') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'bank' value="bank" name="type"> 银行入款</label></if>
+            <if condition="getInfo('online_wechat') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio" id = 'online_wechat' value="online_wechat" name="type"> 微信充值</label></if>
+            <if condition="getInfo('online_wechat') eq 1"><label style="padding-right: .2rem;width: auto;"><input type="radio"  id = 'online_alipay' value="online_alipay" name="type"> 支付宝充值</label></if> -->
+		<article class="clearfix mt10 m-round g-pay-ment g-bank-ct">
+                <ul id="ulBankList">
+                      <li class="gray6" >
+                    </li>
+                   <li class="gray6">
+                       </li>
+                  <!--  <if condition="getInfo('qr_alipay_status') eq 1">   <li paytype="alipay" class="gray9" type="codePay" style="width: 33%">
+                        <a href="javascript:;" class="z-initsel"><img src="/codepay/img/alipay.jpg"><s></s></a>
+                        </li></if>
+                     <if condition="getInfo('qr_wechat_status') eq 1"> <li paytype="wechat" class="gray9" type="codePay" style="width: 33%">
+                        <a href="javascript:;"><img src="/codepay/img/weixin.jpg"><s></s></a>
+                        </li></if> -->
+                    <if condition="getInfo('pay_bank_status') eq 1"> <li paytype="bank" class="gray9" type="codePay" style="width: 33%">
+                        <a href="javascript:;"><img src="/codepay/img//qqpay.jpg"><s></s></a>
+                    </li></if>
+					  <!-- <div class="" style = 'padding: .2rem .25rem; -->
+    <!-- background: #fff; -->
+    <!-- font-size: .28rem; -->
+    <!-- margin: .02rem 0;'> -->
+            <!-- <label>在线支付</label> -->
+         
+        <!-- </div> -->
+				<!--	 <if condition="getInfo('online_wechat') eq 1"> <li paytype="online_wechat" class="gray9" type="codePay" style="width: 33%">
+                        <a href="javascript:;"><img src="/codepay/img//alipay.jpg"><s></s></a>
+                    </li></if> 
+					 <if condition="getInfo('online_wechat') eq 1"><li paytype="online_alipay" class="gray9" type="codePay" style="width: 33%">
+                        <a href="javascript:;"><img src="/codepay/img//weixin.jpg"><s></s></a>
+                    </li></if> -->
+                </ul>
+            </article>
+		  <input type="hidden" id="pay_type" value="bank" name="type"> <!--值1表示支付宝默认-->
+        <div class="blank_card" id="blank">
+	         <label>银行卡</label><input id="chose_input" type="text" placeholder="请选择银行卡" />
+	         <div class="jt_xz"><img class="down" src="__PUBLIC__/mobile//img/jtx.png" ></div>
+	         <div id="chose_bank" class="bank_xljt1"></div>
+	         <ul class="bank_xl">
+	             <li>
+                     <a href="javascript:;" title="中国工商银行">
+                         <img src="__PUBLIC__/mobile/img/bank/bank_ICBC.jpg" alt="">
+                     </a>
+                 </li>
+                 <li>
+                     <a href="javascript:;" title="中国农业银行">
+                         <img src="__PUBLIC__/mobile/img/bank/bank_ABC.jpg" alt="">
+                     </a>
+                 </li>
+                 <li>
+                     <a href="javascript:;" title="中国建设银行">
+                         <img src="__PUBLIC__/mobile/img/bank/bank_CCB.jpg" alt="">
+                     </a>
+                 </li><li>
+                     <a href="javascript:;" title="招商银行">
+                         <img src="__PUBLIC__/mobile/img/bank/bank_CMB.jpg" alt="">
+                     </a>
+                 </li><li>
+                     <a href="javascript:;" title="中国银行">
+                         <img src="__PUBLIC__/mobile/img/bank/bank_BOC.jpg" alt="">
+                     </a>
+                 </li>
+	         </ul>
+	    </div>
+        <input type="submit" value="立即充值" class="input_btn">
+    </form>
+<!-- 充值  end-->
+</div>
+<script>
+$(function(){
+    //下拉银行卡
+    $(".bank_xl li a").bind('click',function(){
+       $('#chose_input').val($(this).attr('title'));
+        $('.bank_xl').slideUp();
+        $("#chose_bank").parent().find('.jt_xz img').addClass('down');
+    });
+    $("#chose_bank").click(function(){
+        $('.bank_xl').slideDown();
+        $("#chose_bank").prev().find('img').removeClass('down');
+    });
+    $(":radio[name='style']").click(function(){
+        var index = $(this).val();
+        if(index == 3){
+        	 //$("#blank").show();
+        }else{
+        	//$("#blank").hide();
+        }            
+    });
+})
+
+
+$("#ifr").submit(function(){
+    var money = parseFloat($("#money").val()).toFixed(2);
+    var auth = parseInt("{$user.auth}");
+//    if(auth == 0){
+//        msg("错误","请认证后再进行充值！",2,"{:U('User/certification')}");
+//        return false;
+//    }
+    if(isNaN(money)){
+        msg("错误","充值金额有误！",1);
+        return false;
+    }
+    if(money < 0.01){
+        msg("错误","最低充值金额0.01元！",1);
+        return false;
+    }
+    var type = $("#pay_type").val();
+    if(type == null){
+        msg("错误","请选择支付方式！",1);
+        return false;
+    }
+})
+</script>
+ <script language="javascript" type="text/javascript">
+
+        $(function () {
+            var c;
+            var g = false;
+            var a = null;
+            var e = function () {
+                $("#ulOption > li").each(function () {
+                    var n = $(this);
+                    n.click(function () {
+                        g = false;
+                        c = n.attr("money");
+                        n.children("a").addClass("z-sel");
+                        n.siblings().children().removeClass("z-sel").removeClass("z-initsel");
+                        var needMoney = parseFloat(n.attr("money")).toFixed(2);
+                        if (needMoney <= 0)needMoney = 0.01;
+                        $("#price").val(needMoney);
+                    })
+                });
+                $("#ulBankList > li").each(function (m) {
+                     var n = $(this);
+                    n.click(function () {
+					console.log(m);
+                        if (m < 2)return;
+                        $("#pay_type").val(n.attr("payType"));
+                        n.children("a").addClass("z-initsel");
+                        n.siblings().children().removeClass("z-initsel");
+                    })
+                });
+
+            };
+            e()
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- 底部样式 -->
+<div class="header-nbsp"></div>
+<div class="footer_nav">
+    <a href="{:U('Mobile/index')}">
+        <img src="__PUBLIC__/mobile/img/home.png">
+        <span>首页</span>
+    </a>
+    <a href="{:U('Mobile/lists')}">
+        <img src="__PUBLIC__/mobile/img/invest.png">
+        <span class="">投资项目</span>
+    </a>
+    <a href="{:U('User/person')}">
+        <img src="__PUBLIC__/mobile/img/user.png">
+        <span>会员中心</span>
+    </a>
+    <a href="{:U('About/index')}">
+        <img src="__PUBLIC__/mobile/img/about.png">
+        <span>关于我们</span>
+    </a>
+    <a href="{:getInfo('service')}">
+        <img src="__PUBLIC__/mobile/img/kefu.png">
+        <span class="active">在线客服</span>
+    </a>
+</div>
+<!-- 底部样式 end -->
+<!-- 回到顶部 -->
+<div class="go_top" id="go_top"><img src="__PUBLIC__/mobile/img/top.png"></div>
+<script type="text/javascript">
+    $(function(){
+        var nav = "[menu]";
+        if(nav == "index"){
+            $(".footer_nav span").eq(0).addClass("active");
+            $(".footer_nav img").eq(0).attr("src","__PUBLIC__/mobile/img/home_blue.png");
+        }
+        if(nav == "list"){
+            $(".footer_nav span").eq(1).addClass("active");
+            $(".footer_nav img").eq(1).attr("src","__PUBLIC__/mobile/img/invest_blue.png");
+        }
+        if(nav == "user"){
+            $(".footer_nav span").eq(2).addClass("active");
+            $(".footer_nav img").eq(2).attr("src","__PUBLIC__/mobile/img/user_blue.png");
+        }
+        if(nav == "about"){
+            $(".footer_nav span").eq(3).addClass("active");
+            $(".footer_nav img").eq(3).attr("src","__PUBLIC__/mobile/img/about_blue.png");
+        }
+    })
+</script>
